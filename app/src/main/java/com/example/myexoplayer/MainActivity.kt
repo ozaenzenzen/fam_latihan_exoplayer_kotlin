@@ -16,9 +16,11 @@ class MainActivity : AppCompatActivity() {
 
         val videoItem =
             MediaItem.fromUri("https://github.com/dicodingacademy/assets/releases/download/release-video/VideoDicoding.mp4")
+        val audioItem = MediaItem.fromUri("https://github.com/dicodingacademy/assets/raw/main/android_intermediate_academy/bensound_ukulele.mp3")
 
         val player = ExoPlayer.Builder(this).build().also { exoPlayer ->
             exoPlayer.setMediaItem(videoItem)
+            exoPlayer.addMediaItem(audioItem)
             exoPlayer.prepare()
         }
 
